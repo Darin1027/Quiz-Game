@@ -30,3 +30,7 @@ button {
     width: 60vw;
     background-color: #f0ead6;
   }
+
+  .hide {
+    display: none;
+  }

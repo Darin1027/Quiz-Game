@@ -14,7 +14,7 @@
         <a href="" id="HighscoreLink" target="_blank">View Highscores</a>
         <div>
           <h3>Timer:
-            <span>0</span>
+            <span id="timer">0</span>
           </h3>
         </div>
       </nav>
@@ -22,14 +22,25 @@
     <main class="wrapper">
       <section class="container">
         <div class="container-contents"">
-          <h2>
-            <!-- * question goes here -->
-            Example: Here is a question!
-          </h2>
-          <button id="question1">Question 1</button>
-          <button id="question2">Question 2</button>
-          <button id="question3">Question 3</button>
-          <button id="question4">Question 4</button>
+          <div id="start-game">
+            <h1>Charlie's Cool Quiz</h1>
+            <p>
+              You have exactly 120 seconds to complete this quiz!
+              When you get a question wrong you will lose time!
+              Press the Start Button to begin!
+            </p>
+            <button id="start-btn">START QUIZ!</button>
+          </div>
+          <div id="question" class="hide">
+            <h2 id="question-text">
+              <!-- * question goes here -->
+              Example: Here is a question!
+            </h2>
+            <button id="question1">Question 1</button>
+            <button id="question2">Question 2</button>
+            <button id="question3">Question 3</button>
+            <button id="question4">Question 4</button>
+          </div>
         </div>
       </section>
       <section>
