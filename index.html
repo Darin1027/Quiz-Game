@@ -13,7 +13,8 @@
       <nav>
         <a href="" id="HighscoreLink" target="_blank">View Highscores</a>
         <div>
-          <h3>Timer:
+          <h3>
+            Timer:
             <span id="timer">0</span>
           </h3>
         </div>
@@ -21,31 +22,34 @@
     </header>
     <main class="wrapper">
       <section class="container">
-        <div class="container-contents"">
-          <div id="start-game">
-            <h1>Charlie's Cool Quiz</h1>
-            <p>
-              You have exactly 120 seconds to complete this quiz!
-              When you get a question wrong you will lose time!
-              Press the Start Button to begin!
-            </p>
-            <button id="start-btn">START QUIZ!</button>
-          </div>
-          <div id="question" class="hide">
-            <h2 id="question-text">
-              <!-- * question goes here -->
-              Example: Here is a question!
-            </h2>
-            <button id="question1">Question 1</button>
-            <button id="question2">Question 2</button>
-            <button id="question3">Question 3</button>
-            <button id="question4">Question 4</button>
+      <div id="start-game" class="start-game">
+        <h1>ChArLiE's CrAzY qUiZ!</h1>
+        <p>
+          Click aorund and answer some questions, you get any wrong and you will
+          lose time!
+        </p>
+        <button id="start-btn" class="start-btn">Click Here!</button>
+        </div>
+      </section>
+      </div>
+      <section class="container">
+        <div id="question-container" class="hide">
+          <div id="question-text">Here will be a question</div>
+          <div id="answer-buttons" class="btn-container">
+            <button class="answer-button">Here will be an answer 1</button>
+            <button class="answer-button">Here will be an answer 2</button>
+            <button class="answer-button">Here will be an answer 3</button>
+            <button class="answer-button">Here will be an answer 4</button>
           </div>
         </div>
       </section>
-      <section>
-        <!-- todo Here is will need an input box that is hidden until the end of the game is reached... i think. -->
-      </section>
+      <section class="container">
+      <div id="highscore" class="hide">
+        <p>
+        here is where the highscore and name input would 
+      </p>
+      </div>
+    </section>
     </main>
     <script src="./assets/script/script.js"></script>
   </body>
