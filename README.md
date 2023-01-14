@@ -1,4 +1,4 @@
-# Text Editor
+# Trivia Quiz Game
 
 ## Table of Contents
 
