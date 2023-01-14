@@ -1,161 +1,172 @@
-//* DECLARATION OF VARIABLE IN GLOBAL MEMORY
+// Initialize variables
+let timerInterval;
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = 60;
+let highScores = [];
 
-// var timerId;
-// var timeLeft = 120;
-// var currentQuestion;
-
-// // * EVENT LISTENERS
-// questionElement.addEventListener("click", () => {
-//   questionIndex++;
-//   getNextQuestion();
-// });
-
-// //* FUNCTIONS
-// //on screen load the user should see a start button
-// function startGame() {
-//   startGameElement.setAttribute("class", "hide"); //hide the start button
-//   questionElement.removeAttribute("class"); //show the hidden question
-// timerId = setInterval(timerTick, 1000); //sets the clock timer countdown
-// timer.textContent = timeLeft; //displays the time remaining to the user
-//   getNextQuestion(); //get the first question by calling the getNextQuestion function
-// }
-
-// function getNextQuestion() {
-//   currentQuestion = questionArray[questionIndex]; //establishes the current question is set at
-//   //   whatever our current question index is (start should be 0),
-//   questionTextElement.textContent = currentQuestion.question; //updates element text to the current question index
-//   question1Element.textContent = currentQuestion.choices[0]; // update text for user choice
-//   question2Element.textContent = currentQuestion.choices[1]; // update text for user choice
-//   question3Element.textContent = currentQuestion.choices[2]; // update text for user choice
-//   question4Element.textContent = currentQuestion.choices[3]; // update text for user choice
-// }
-
-// function selectedAnswer(event) {
-//   var selectedElement = event.target;
-//   if (selectedElement.textContent === currentQuestion.correctAnswer) {
-//   } else ()
-//   questionIndex = questionIndex++;
-//   return questionIndex;
-//   }
-// }
-
-// function timerTick() {
-//   console.log("timerTick called");
-//   timeLeft--;
-//   timer.textContent = timeLeft;
-//   if (timeLeft <= 0) {
-//     gameOver();
-//   }
-// }
-// function gameOver() {
-//   // to be completed
-// }
-
-var HighscoreLink = document.querySelector("#HighscoreLink");
-var timer = document.querySelector("#timer");
-var startGame = document.querySelector("#start-game");
-var startBtn = document.querySelector("#start-btn");
-var questionContainer = document.querySelector("#question-container");
-var questionText = document.querySelector("#question-text");
-var answerBtns = document.querySelector("#answer-buttons");
-var highscore = document.querySelector("#highscore");
-var questionArray = [
+// Quiz questions and answers
+const questions = [
   {
-    question: "Who is her favorite person?",
-    choices: ["Genghis Khan", "Vladimir Putin", "Thanos", "Mama"],
-    answer: "Mama",
+    question: "What is the real name of the X-Men member known as Cyclops?",
+    answers: ["Scott Summers", "Bobby Drake", "Ororo Munroe", "Hank McCoy"],
+    correctAnswer: "Scott Summers",
   },
   {
-    question: "What is her favorite food?",
-    choices: [
-      "Organic Cotton Candy",
-      "Whiskey on the Rocks",
-      "Apples",
-      "Raw Sugar Cane",
+    question: "Who is the leader of the X-Men?",
+    answers: ["Professor X", "Cyclops", "Storm", "Wolverine"],
+    correctAnswer: "Professor X",
+  },
+  {
+    question: "What is the name of the X-Men member who can control metal?",
+    answers: ["Magneto", "Storm", "Rogue", "Shadowcat"],
+    correctAnswer: "Magneto",
+  },
+  {
+    question:
+      "What is the name of the X-Men member who can fly and shoot energy beams from his eyes?",
+    answers: ["Cyclops", "Beast", "Angel", "Iceman"],
+    correctAnswer: "Cyclops",
+  },
+  {
+    question: "Who is the X-Men member who has the ability to teleport?",
+    answers: ["Nightcrawler", "Jean Grey", "Archangel", "Psylocke"],
+    correctAnswer: "Nightcrawler",
+  },
+  {
+    question:
+      "What is the name of the X-Men member who has the ability to create force fields?",
+    answers: ["Colossus", "Rogue", "Havok", "Polaris"],
+    correctAnswer: "Colossus",
+  },
+  {
+    question:
+      "What is the name of the X-Men member who has the ability to control the weather?",
+    answers: ["Storm", "Iceman", "Archangel", "Beast"],
+    correctAnswer: "Storm",
+  },
+  {
+    question:
+      "Who is the X-Men member who has the ability to manipulate reality?",
+    answers: ["Scarlet Witch", "Jean Grey", "Emma Frost", "Forge"],
+    correctAnswer: "Scarlet Witch",
+  },
+  {
+    question:
+      "What is the name of the X-Men member who has the ability to change into a werewolf?",
+    answers: ["Wolfsbane", "Nightcrawler", "Sabretooth", "Wolverine"],
+    correctAnswer: "Wolfsbane",
+  },
+  {
+    question: "What is the name of the X-Men's main base of operations?",
+    answers: [
+      "The X-Mansion",
+      "The Danger Room",
+      "The Blackbird",
+      "The Xavier Institute",
     ],
-    answer: "Apples",
-  },
-  {
-    question: "What is her favorite show?",
-    choices: ["The Ozarks", "Game of Thrones", "Rick and Morty", "CocoMelon"],
-    answer: "CocoMelon",
-  },
-  {
-    question: "What did she dress as for Halloween? ",
-    choices: [
-      "Tom Brady in full game uniform",
-      "A bottle of Kethup",
-      "A bottle of Mustard",
-      "The Cat in the Hat",
-    ],
-    answer: "The Cat in the Hat",
+    correctAnswer: "The X-Mansion",
   },
 ];
-console.log(questionArray[0].answer);
-
-startBtn.addEventListener("click", function () {
-  console.log("started");
-  startGame.setAttribute("class", "hide");
-  questionContainer.removeAttribute("class", "hide");
-});
-
-function answerClick() {
-  //psuedio code
-  //. if - check user guessed wrong
-  //when wrong a timer deduction needs to happen
-  //else - check if user guessed right
-  console.log(this); //this will refer to the value of the button the user
-  //clicked and you can compare thatr value to this
-}
-
-var questionIndex = 0;
-function getNextQuestion() {
-  //get current question object from array
-  var currentQuestion = questionArray[questionIndex];
-
-  //update the title
-
-  //clear old question choices
-
-  //loop over choices array with the for/each method
-  // currentQuestion.choices.forEach(){
-  //   console.log(test);
-  // }
-}
-
-// startBtn.addEventListener("click", () => {
-//   console.log("started");
-// });
-console.log("test");
 
 function startGame() {
-  console.log("started");
-  // startBtn.setAttribute("class", "hide");
+  document.getElementById("start-game-container").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+  startQuiz();
 }
 
-// function start(a1, a2) {
-//   var x = a1 + a2;
-//   return x;
-// }
+// Start the quiz
+function startQuiz() {
+  // Initialize variables
+  let currentQuestion = 0;
+  let score = 0;
+  let timeLeft = 60;
 
-// var y = 5;
-// var z = 3;
-// var result = start(z, y);
-// console.log("result", result);
+  // Start the timer
+  let timerInterval = setInterval(() => {
+    timeLeft--;
+    document.getElementById("time-left").textContent = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+      endQuiz(); // call the function when the time is up
+    }
+  }, 1000);
 
-// startBtn.setAttribute("class", "hide");}
+  // Display the first question
+  displayQuestion();
+}
 
-// currentQuestion.choices.forEach(function(choice, i) {
-//   // create new button for each choice
-//   var choiceNode = document.createElement("button");
-//   choiceNode.setAttribute("class", "choice");
-//   choiceNode.setAttribute("value", choice);
+// Display the current question
+function displayQuestion() {
+  let question = questions[currentQuestion];
+  document.getElementById("question").innerHTML = question.question;
+  for (let i = 0; i < question.answers.length; i++) {
+    let answerBtn = document.getElementById(`answer${i}`);
+    answerBtn.innerHTML = question.answers[i];
+    answerBtn.onclick = checkAnswer;
+  }
+}
 
-//   choiceNode.textContent = i + 1 + ". " + choice;
+// Check if the selected answer is correct
+function checkAnswer() {
+  let correctAnswer = questions[currentQuestion].correctAnswer;
+  if (this.textContent === correctAnswer) {
+    score++;
+    document.getElementById("score").textContent = score;
+  } else {
+    timeLeft -= 10;
+  }
+  // Move to the next question
+  currentQuestion++;
+  if (currentQuestion === questions.length) {
+    endQuiz();
+  } else {
+    displayQuestion(); // call the function to display the next question
+  }
+}
 
-//   // attach click event listener to each choice
-//   choiceNode.onclick = answerClick;
+// End the quiz
+function endQuiz() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+  document.getElementById("quiz-container").style.display = "none";
+  document.getElementById("final-score").textContent = score;
+  clearInterval(timerInterval);
+  document.getElementById("final-score-container").style.display = "block";
+  displayHighScores();
+}
 
-//   // display on the page
-//   choicesEl.appendChild(choiceNode);
-// });
+// Save the player's score and initials
+function saveScore() {
+  let initials = document.getElementById("initials").value;
+  localStorage.setItem("initials", initials);
+  localStorage.setItem("score", score);
+  // Check if the player entered their initials
+  // Check if the user entered initials
+  if (initials !== "") {
+    // Store the score and initials in local storage
+    highScores.push({ initials: initials, score: finalScore });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  } else {
+    alert("Please enter your initials to save your score.");
+  }
+
+  window.location.href = "highscores.html";
+  console.log("hello world");
+}
+
+// Display the list of past quiz sessions
+function displayHighScores() {
+  let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  let table = document.getElementById("highscores-table");
+  for (let i = 0; i < highScores.length; i++) {
+    let row = table.insertRow(-1);
+    let initialsCell = row.insertCell(0);
+    let scoreCell = row.insertCell(1);
+    initialsCell.innerHTML = highScores[i].initials;
+    scoreCell.innerHTML = highScores[i].score;
+  }
+}
+
+startQuiz();

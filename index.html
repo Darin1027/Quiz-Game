@@ -4,53 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belle's Quiz Game</title>
-    <link rel="stylesheet" href="Assets\CSS\style.css" />
+    <link href="./Assets/CSS/style.css" rel="stylesheet" />
+    <title>Document</title>
   </head>
 
   <body>
-    <header class="header">
-      <nav>
-        <a href="" id="HighscoreLink" target="_blank">View Highscores</a>
-        <div>
-          <h3>
-            Timer:
-            <span id="timer">0</span>
-          </h3>
-        </div>
-      </nav>
-    </header>
-    <main class="wrapper">
-      <section class="container">
-      <div id="start-game" class="start-game">
-        <h1>ChArLiE's CrAzY qUiZ!</h1>
-        <p>
-          Click aorund and answer some questions, you get any wrong and you will
-          lose time!
-        </p>
-        <button id="start-btn" class="start-btn">Click Here!</button>
-        </div>
-      </section>
+    <main>
+      <div id="start-game-container">
+        <h1>Welcome to the X-Men Trivia Game!</h1>
+        <button id="start-button" onclick="startGame()">Start Game</button>
       </div>
-      <section class="container">
-        <div id="question-container" class="hide">
-          <div id="question-text">Here will be a question</div>
-          <div id="answer-buttons" class="btn-container">
-            <button class="answer-button">Here will be an answer 1</button>
-            <button class="answer-button">Here will be an answer 2</button>
-            <button class="answer-button">Here will be an answer 3</button>
-            <button class="answer-button">Here will be an answer 4</button>
+      <div id="quiz-container">
+        <h1>JavaScript Quiz</h1>
+        <div id="question-container">
+          <p id="question"></p>
+          <div id="answers">
+            <button id="answer0"></button>
+            <button id="answer1"></button>
+            <button id="answer2"></button>
+            <button id="answer3"></button>
           </div>
         </div>
-      </section>
-      <section class="container">
-      <div id="highscore" class="hide">
-        <p>
-        here is where the highscore and name input would 
-      </p>
+        <div id="score-container">
+          <p>Time remaining: <span id="time-left"></span></p>
+          <p>Score: <span id="score"></span></p>
+        </div>
       </div>
-    </section>
+
+      <div id="final-score-container" style="display: none">
+        <h1>Quiz Over</h1>
+        <p>Your final score is: <span id="final-score"></span></p>
+        <form>
+          <label>Enter your initials:</label>
+          <input type="text" id="initials" maxlength="3" required />
+          <button onclick="saveScore()">Save Score</button>
+        </form>
+        <table id="highscores-table"></table>
+      </div>
     </main>
-    <script src="./assets/script/script.js"></script>
+    <script src="./Assets/script/script.js"></script>
   </body>
 </html>
