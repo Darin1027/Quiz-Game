@@ -141,7 +141,6 @@ function endQuiz() {
   document.getElementById("quiz-container").style.display = "none";
   document.getElementById("final-score").textContent = score;
   clearInterval(timerInterval);
-
   // Save the score and initials
   let initials = document.getElementById("initials").value;
   if (initials !== "") {
@@ -151,9 +150,9 @@ function endQuiz() {
   } else {
     alert("Please enter your initials to save your score.");
   }
-
   // Display the final score and high scores
   document.getElementById("final-score-container").style.display = "block";
+  saveScore();
   displayHighScores();
 }
 
