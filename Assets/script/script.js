@@ -160,9 +160,6 @@ function endQuiz() {
 // Display the list of past quiz sessions
 function displayHighScores() {
   let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  highScores.sort(function (a, b) {
-    return b.score - a.score;
-  });
   let highScoreList = document.getElementById("highscores-list");
   highScoreList.innerHTML = "";
   for (let i = 0; i < highScores.length; i++) {
