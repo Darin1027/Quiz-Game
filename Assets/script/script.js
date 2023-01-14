@@ -141,6 +141,18 @@ function endQuiz() {
   document.getElementById("quiz-container").style.display = "none";
   document.getElementById("final-score").textContent = score;
   clearInterval(timerInterval);
+
+  // Save the score and initials
+  let initials = document.getElementById("initials").value;
+  if (initials !== "") {
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials: initials, score: score });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  } else {
+    alert("Please enter your initials to save your score.");
+  }
+
+  // Display the final score and high scores
   document.getElementById("final-score-container").style.display = "block";
   displayHighScores();
 }
@@ -167,13 +179,13 @@ function saveScore() {
 // Display the list of past quiz sessions
 function displayHighScores() {
   let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  let table = document.getElementById("highscores-table");
+  let highScoreList = document.getElementById("highscores-list");
+  highScoreList.innerHTML = "";
   for (let i = 0; i < highScores.length; i++) {
-    let row = table.insertRow(-1);
-    let initialsCell = row.insertCell(0);
-    let scoreCell = row.insertCell(1);
-    initialsCell.innerHTML = highScores[i].initials;
-    scoreCell.innerHTML = highScores[i].score;
+    let score = highScores[i];
+    let li = document.createElement("li");
+    li.textContent = `${score.initials} - ${score.score}`;
+    highScoreList.appendChild(li);
   }
 }
 
