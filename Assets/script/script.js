@@ -96,9 +96,17 @@ function startQuiz() {
   displayQuestion();
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 // Display the current question
 function displayQuestion() {
   let question = questions[currentQuestion];
+  shuffleArray(question.answers);
   document.getElementById("question").innerHTML = question.question;
   for (let i = 0; i < question.answers.length; i++) {
     let answerBtn = document.getElementById(`answer${i}`);
